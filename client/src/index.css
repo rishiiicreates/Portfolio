@@ -1,0 +1,357 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground overflow-x-hidden;
+  }
+
+  /* Custom variables - Anime-inspired vibrant colors */
+  :root {
+    --background: 220 70% 5%;
+    --foreground: 210 50% 98%;
+    
+    --card: 230 60% 7%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 230 60% 6%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 215 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 35 100% 55%;
+    --secondary-foreground: 230 60% 10%;
+    
+    --muted: 217 40% 20%;
+    --muted-foreground: 215 30% 70%;
+    
+    --accent: 355 100% 60%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 90% 50%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 215 50% 23%;
+    --input: 215 50% 23%;
+    --ring: 215 85% 60%;
+
+    --dark: 230 60% 10%;
+    --light: 210 40% 98%;
+    
+    /* Anime-specific vibrant colors */
+    --straw-hat: 35 100% 55%;
+    --luffy-red: 355 100% 60%;
+    --zoro-green: 135 80% 45%;
+    --sanji-yellow: 45 100% 60%;
+    --nami-orange: 25 100% 65%;
+    --chopper-pink: 350 80% 70%;
+    --robin-purple: 280 80% 60%;
+    --franky-blue: 195 90% 55%;
+    --brook-white: 0 0% 98%;
+    --usopp-brown: 30 70% 45%;
+    --jinbe-cyan: 190 90% 50%;
+  }
+
+  /* Animation keyframes - Enhanced with anime-style effects */
+  @keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+
+  @keyframes float-bob {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    75% { transform: translateY(5px); }
+  }
+
+  @keyframes sail {
+    0% { transform: translateX(-20px) rotate(-5deg); }
+    50% { transform: translateX(20px) rotate(5deg); }
+    100% { transform: translateX(-20px) rotate(-5deg); }
+  }
+
+  @keyframes water-ripple {
+    0% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.5); opacity: 0.1; }
+    100% { transform: scale(1); opacity: 0.3; }
+  }
+  
+  /* Anime-style animations */
+  @keyframes power-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.8); }
+  }
+  
+  @keyframes shake-anime {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+  
+  @keyframes bouncy-anime {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+  }
+  
+  @keyframes rotate-shine {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  @keyframes glowing-outline {
+    0%, 100% { box-shadow: 0 0 5px 2px rgba(59, 130, 246, 0.5); }
+    50% { box-shadow: 0 0 15px 5px rgba(59, 130, 246, 0.8); }
+  }
+  
+  @keyframes slide-in-right {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes slide-in-left {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes fade-in-up {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes zoom-bounce {
+    0% { transform: scale(0.7); }
+    50% { transform: scale(1.1); }
+    75% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+
+  /* One Piece inspired custom font classes */
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Animation utility classes */
+  .animate-wave {
+    animation: wave 2s ease-in-out infinite;
+  }
+
+  .animate-float-bob {
+    animation: float-bob 6s ease-in-out infinite;
+  }
+
+  .animate-sail {
+    animation: sail 10s ease-in-out infinite;
+  }
+
+  .animate-water-ripple {
+    animation: water-ripple 4s ease-in-out infinite;
+  }
+  
+  /* Anime-style animation utility classes */
+  .animate-power-pulse {
+    animation: power-pulse 2s ease-in-out infinite;
+  }
+  
+  .animate-shake {
+    animation: shake-anime 0.8s cubic-bezier(.36,.07,.19,.97) both;
+  }
+  
+  .animate-bouncy {
+    animation: bouncy-anime 1.5s ease-in-out;
+  }
+  
+  .animate-rotate-shine {
+    animation: rotate-shine 3s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glowing-outline 2s ease-in-out infinite;
+  }
+  
+  .animate-slide-right {
+    animation: slide-in-right 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-left {
+    animation: slide-in-left 0.5s ease-out forwards;
+  }
+  
+  .animate-fade-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+  
+  .animate-zoom-bounce {
+    animation: zoom-bounce 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  /* Custom classes - Enhanced for anime aesthetics */
+  .text-glow {
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+  }
+  
+  /* More vibrant text glow options using anime character colors */
+  .text-glow-luffy {
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.7);
+  }
+  
+  .text-glow-zoro {
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.7);
+  }
+  
+  .text-glow-sanji {
+    text-shadow: 0 0 10px rgba(234, 179, 8, 0.7);
+  }
+  
+  .text-glow-chopper {
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.7);
+  }
+  
+  /* Anime-style text outline */
+  .text-outline-light {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-outline-dark {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* Button glow effects - updated for anime aesthetics */
+  .btn-glow {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.9);
+    transform: translateY(-3px);
+  }
+  
+  /* Character-themed button glows */
+  .btn-glow-luffy {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+    border: 2px solid rgba(239, 68, 68, 0.8);
+  }
+  
+  .btn-glow-luffy:hover {
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.9);
+  }
+  
+  .btn-glow-zoro {
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+    border: 2px solid rgba(34, 197, 94, 0.8);
+  }
+  
+  .btn-glow-zoro:hover {
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.9);
+  }
+  
+  /* Card styling with anime aesthetics */
+  .card-anime {
+    backdrop-filter: blur(8px);
+    background: rgba(17, 24, 39, 0.7);
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 32px rgba(31, 41, 55, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .card-anime:hover {
+    border-color: rgba(59, 130, 246, 0.8);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(14, 165, 233, 0.4);
+  }
+
+  /* Ocean map background */
+  .map-bg {
+    background-image: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  /* Pirate themed styles */
+  .pirate-border {
+    border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%23F59E0B" stroke-width="4" stroke-dasharray="10,10"/></svg>') 1 repeat;
+    border-width: 4px;
+    border-style: solid;
+  }
+  
+  .ocean-gradient {
+    background: linear-gradient(to bottom, #1E3A8A 0%, #1E40AF 100%);
+  }
+
+  /* Custom scroll styling */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0F172A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1E40AF;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F59E0B;
+  }
+
+  /* Section styling */
+  .section {
+    min-height: 100vh;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Canvas container */
+  .canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* One Piece wave pattern - can be used as a divider */
+  .wave-divider {
+    height: 15px;
+    width: 100%;
+    background-image: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 20px,
+      rgba(245, 158, 11, 0.2) 20px,
+      rgba(245, 158, 11, 0.2) 40px
+    );
+    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 20" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 L0,10 C10,15 15,0 25,10 C35,20 40,0 50,10 C60,20 65,0 75,10 C85,20 90,0 100,10 L100,20 Z" fill="black"/></svg>');
+    mask-size: 100px 100%;
+    mask-repeat: repeat-x;
+    position: relative;
+  }
+}
